@@ -1,7 +1,7 @@
-com\dreamsyssoft\demo\rest\model\Song.class
-com\dreamsyssoft\demo\rest\model\SongResponse.class
-com\dreamsyssoft\demo\rest\services\SongManager.class
-com\dreamsyssoft\demo\rest\model\SongRequest.class
-com\dreamsyssoft\demo\rest\dao\impl\SongManagerMemoryDao.class
-com\dreamsyssoft\demo\rest\dao\SongManagerDao.class
-com\dreamsyssoft\demo\rest\services\impl\SongManagerService.class
+com\smcapi\demo\rest\services\SongManager.class
+com\smcapi\demo\rest\model\SongResponse.class
+com\smcapi\demo\rest\dao\impl\SongManagerMemoryDao.class
+com\smcapi\demo\rest\services\impl\SongManagerService.class
+com\smcapi\demo\rest\model\Song.class
+com\smcapi\demo\rest\dao\SongManagerDao.class
+com\smcapi\demo\rest\model\SongRequest.class
