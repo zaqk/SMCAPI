@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     	xmlns:cxf="http://cxf.apache.org/core"
+		xmlns:jaxws="http://cxf.apache.org/jaxws"
+		xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+		xsi:schemaLocation="
+			http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+    <cxf:bus>
+        <cxf:features>
+            <cxf:logging/>
+        </cxf:features>
+    </cxf:bus>
+
+	<bean id="songDao"
+		class="com.dreamsyssoft.demo.rest.dao.impl.SongManagerMemoryDao">
+	</bean>
+
+	<bean id="songManagerService"
+		class="com.dreamsyssoft.demo.rest.services.impl.SongManagerService">
+		<property name="songDao" ref="songDao" />
+	</bean>
+
+	<bean id="jsonProvider" 
+		class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
+	
+  	<jaxrs:server id="managerREST" address="/">
+  		<jaxrs:serviceBeans>
+  			<ref bean="songManagerService"/>
+  		</jaxrs:serviceBeans>
+  		<jaxrs:providers>
+			<ref bean='jsonProvider' />
+		</jaxrs:providers>
+  	</jaxrs:server>
+
+</beans>
