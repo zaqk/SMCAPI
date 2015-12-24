@@ -46,6 +46,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#build dirs
+#ignore dirs and files
 build/
 target/
+.classpath
+.project
