@@ -1,9 +1,9 @@
-# SMCAPI
+## SMCAPI
 Rest API using Spring and Apache CXF. 
 
 Work in progress.
 
-#Local
+#### Local
 * mvn clean install
 * Move war to Tomcat directory
   * if you're using running Tomcat through Eclipse add Maven Dependencies to Deployment Assembly.
