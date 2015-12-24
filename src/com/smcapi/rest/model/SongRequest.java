@@ -1,4 +1,4 @@
-package com.smcapi.demo.rest.model;
+package com.smcapi.rest.model;
 
 public class SongRequest {
 	

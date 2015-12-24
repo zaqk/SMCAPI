@@ -17,11 +17,11 @@
     </cxf:bus>
 
 	<bean id="songDao"
-		class="com.smcapi.demo.rest.dao.impl.SongManagerMemoryDao">
+		class="com.smcapi.rest.dao.impl.SongManagerMemoryDao">
 	</bean>
 
 	<bean id="songManagerService"
-		class="com.smcapi.demo.rest.services.impl.SongManagerService">
+		class="com.smcapi.rest.services.impl.SongManagerService">
 		<property name="songDao" ref="songDao" />
 	</bean>
 

@@ -1,8 +1,8 @@
-package com.smcapi.demo.rest.services.impl;
+package com.smcapi.rest.services.impl;
 
-import com.smcapi.demo.rest.dao.SongManagerDao;
-import com.smcapi.demo.rest.model.SongResponse;
-import com.smcapi.demo.rest.services.SongManager;
+import com.smcapi.rest.dao.SongManagerDao;
+import com.smcapi.rest.model.SongResponse;
+import com.smcapi.rest.services.SongManager;
 
 public class SongManagerService implements SongManager{
 	
