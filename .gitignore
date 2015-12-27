@@ -52,4 +52,8 @@ target/
 .classpath
 .project
 .settings/
+<<<<<<< HEAD
 /bin/
+=======
+.project
+>>>>>>> branch 'master' of https://github.com/zaqk/SMCAPI.git
