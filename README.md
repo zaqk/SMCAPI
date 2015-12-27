@@ -6,3 +6,4 @@ Work in progress.
 #### Local
 * $ mvn clean install
 * $ java -cp "target/classes;target/dependency/*" com.smcapi.main.Main
+* test by hitting "localhost:8080/api/search" with a GET request
