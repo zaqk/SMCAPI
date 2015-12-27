@@ -10,7 +10,7 @@ import com.smcapi.rest.model.SongResponse;
 public interface SongManager {
 	
 	@GET
-	@Path("/search/")
+	@Path("search")
 	public SongResponse search();
 
 }

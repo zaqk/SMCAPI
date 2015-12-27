@@ -2,6 +2,7 @@ package com.smcapi.rest.model;
 
 
 public class Song{
+	
 	private boolean experimental;
 	private boolean hipHop;
 	private boolean indie;
