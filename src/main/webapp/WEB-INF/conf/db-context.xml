@@ -2,13 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<!-- this is not in use. it's for future conversion to spring jdbc connection -->
+
 	<bean class="java.net.URI" id="dbUrl">
     	<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
 	</bean>
 
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
-   	 	<property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }"/>
+   	 	<property name="url" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() + '?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory'}"/>
    	 	<property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
    	 	<property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
 	</bean>

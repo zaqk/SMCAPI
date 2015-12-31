@@ -5,13 +5,19 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.logging.Logger;
 
+import javax.sql.DataSource;
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Main {
 	
 	private static final Logger log = Logger.getLogger(Main.class.getName());
 	private static final String TABLE_NAME = "main";
+	private static final String DB_CONTEXT_BEAN = "src/main/webapp/WEB-INF/conf/db-context.xml";
 
 	public static void main(String[] args) throws Exception{
 		String webappDirLocation = "src/main/webapp";
@@ -45,7 +51,10 @@ public class Main {
     private static void validateDB() {
         log.info("Validating DB");
         try {
-            Connection conn = DB.getConnection();
+        	ApplicationContext ac = new FileSystemXmlApplicationContext(DB_CONTEXT_BEAN);
+        	DataSource dataSource = (DataSource) ac.getBean("dataSource");
+        	Connection conn = dataSource.getConnection();
+            //Connection conn = DB.getConnection();
             Statement statement = conn.createStatement();
             ResultSet rs = statement.executeQuery("select count(*) from " + TABLE_NAME);
             rs.next();
