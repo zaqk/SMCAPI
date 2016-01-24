@@ -13,8 +13,6 @@ import com.smcapi.rest.model.SongRequest;
 
 public class SongManagerMemoryDao implements SongManagerDao {
 	
-	private static final Logger log = Logger.getLogger(Main.class.getName());
-	
 	@Autowired
 	private SongServiceMapper serviceMapper;
 	

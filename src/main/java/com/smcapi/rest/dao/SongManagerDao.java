@@ -8,10 +8,6 @@ import com.smcapi.rest.model.SongRequest;
 
 public interface SongManagerDao {
 	
-
-	
-	//public void setDataSource(DataSource jdbc);
-	
 	public List<Song> search(SongRequest songRequest);
 
 }

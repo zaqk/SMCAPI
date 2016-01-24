@@ -1,4 +1,4 @@
-package com.smcapi.main;
+package com.smcapi.util;
 
 public class Constants{
 	public static final String MAIN_TABLE = "MAIN";

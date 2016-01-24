@@ -5,6 +5,7 @@ public class Song{
 	private int id;
 	private String songName;
 	private String link;
+	private String videoId;
 	private boolean experimental;
 	private boolean houseInfluenced;
 	private boolean hipHopInfluenced;
@@ -27,6 +28,12 @@ public class Song{
 	private boolean ambient;
 	private boolean aggressive;
 	
+	public String getVideoId() {
+		return videoId;
+	}
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+	}
 	public int getId() {
 		return id;
 	}
