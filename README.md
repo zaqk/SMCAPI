@@ -6,8 +6,9 @@ Make sure you set the DATABASE_URL env variable to the connection url of your lo
 Work in progress.
 
 #### Local
-* $ set DATABASE_URL
+* $ set DATABASE_URL environment variable to your local postgres database connection url
 * $ mvn clean install
 * $ java -cp "target/classes;target/dependency/*" com.smcapi.main.Main
-* test by hitting "localhost:8080/api/search" with a GET request
-
+* test by hitting <b>"localhost:8080/api/search"</b> with a POST request and<br />
+  <b>header:</b> "content-type: application/json"<br />
+  <b>body:</b> {"experimental" : "true"}
