@@ -26,6 +26,9 @@
 		class="com.smcapi.rest.services.impl.SongManagerService">
 		<property name="songDao" ref="songDao" />
 	</bean>
+	
+	<bean id="songServiceMapper" class="com.smcapi.rest.dao.mapper.SongServiceMapper">
+	</bean>
 
 	<bean id="jsonProvider" 
 		class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
