@@ -25,10 +25,10 @@ public class SongServiceMapper {
         List<Song> list = new ArrayList<Song>();
         VideoIdExtractor videoIdExtractor = new VideoIdExtractor();
         
-		try {
-			list = session.selectList(Constants.DAO_MAP_SEARCH, songRequest);
-			list.forEach(song -> song.setVideoId(videoIdExtractor.getVideoId(song.getLink())));//set videoId based off of link
-            log.info("List fetched from search :: " + list);
+	try {
+		list = session.selectList(Constants.DAO_MAP_SEARCH, songRequest);
+		list.forEach(song -> song.setVideoId(videoIdExtractor.getVideoId(song.getLink())));//set videoId based off of link
+        	log.info("List fetched from search :: " + list);
         } catch (Exception exception) {
             log.error("search failed. Exception - ", exception);
         }
