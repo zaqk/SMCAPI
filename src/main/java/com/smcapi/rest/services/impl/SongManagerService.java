@@ -4,6 +4,7 @@ import com.smcapi.rest.dao.SongManagerDao;
 import com.smcapi.rest.model.SongRequest;
 import com.smcapi.rest.model.SongResponse;
 import com.smcapi.rest.services.SongManager;
+import com.smcapi.util.Constants;
 
 public class SongManagerService implements SongManager{
 	
@@ -23,13 +24,12 @@ public class SongManagerService implements SongManager{
 		
 		SongResponse response = new SongResponse();
 		
-		try
-		{
+		try {
 			response.setSongs(getSongDao().search(songRequest));
-			System.out.println(response.getSongs().toString());
-		}
-		catch (Exception e)
-		{
+			if(response.getSongs().isEmpty()) {
+				response.setErrorMessage(Constants.NO_RESULTS);
+			}
+		} catch (Exception e) {
 			response.setSuccess(false);
 			response.setErrorMessage(e.getClass() + ": " + e.getMessage());
 		}
