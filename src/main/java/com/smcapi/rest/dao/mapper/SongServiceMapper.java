@@ -29,15 +29,15 @@ public class SongServiceMapper {
         try {
 		list = session.selectList(Constants.DAO_MAP_SEARCH, songRequest);
 		list.forEach(
-				song -> {//remove non-attributes from attribute list. There should be a cleaner way to do this with myBatis instead.
-							song.getAttributes().entrySet().removeIf(
-									entry -> 
-									entry.getKey().equals(Constants.ID) || 
-									entry.getKey().equals(Constants.SONG_NAME) ||
-									entry.getKey().equals(Constants.LINK)
-							);
-							song.setVideoId(videoIdExtractor.getVideoId(song.getLink()));//set videoId based off of link
-						}
+			song -> {//remove non-attributes from attribute list. There should be a cleaner way to do this with myBatis instead.
+					song.getAttributes().entrySet().removeIf(
+						entry -> 
+						entry.getKey().equals(Constants.ID) || 
+						entry.getKey().equals(Constants.SONG_NAME) ||
+						entry.getKey().equals(Constants.LINK)
+					);
+				song.setVideoId(videoIdExtractor.getVideoId(song.getLink()));//set videoId based off of link
+			}
 		);
         } catch (Exception exception) {
             log.error("search failed. Exception - ", exception);
