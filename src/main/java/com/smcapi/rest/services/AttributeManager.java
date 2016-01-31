@@ -11,7 +11,7 @@ import com.smcapi.rest.model.attribute.AttributeResponse;
 public interface AttributeManager {
 	
 	@GET
-	@Path("getAttributes")
+	@Path("attributes")
 	public AttributeResponse getAttributes();
 
 }

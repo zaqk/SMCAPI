@@ -5,12 +5,17 @@
 <configuration>
 	<settings>
     	<setting name="jdbcTypeForNull" value="NULL" />
+    	<setting name="logImpl" value="SLF4j"/>
 	</settings>
 
     <typeAliases>
         <typeAlias type="com.smcapi.rest.model.song.Song" alias="Song"/>
         <typeAlias type="com.smcapi.rest.model.attribute.Attribute" alias="Attribute"/>
     </typeAliases>
+    <typeHandlers>
+  <typeHandler handler="org.mybatis.example.ExampleTypeHandler"/>
+</typeHandlers>
+    
 
   <mappers>
   	<mapper resource="maps/SongServiceMapper.xml"/>

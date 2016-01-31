@@ -21,7 +21,6 @@ public class AttributeManagerService implements AttributeManager{
 	}
 	
 
-	@Override
 	public AttributeResponse getAttributes() {
 		AttributeResponse response = new AttributeResponse();
 		try {

@@ -13,7 +13,7 @@ public class Constants{
 	//environment variable values
 	public static final String ENV_PORT_DEFAULT_VALUE = "8080";
 	
-	//beans
+	//DB beans
 	public static final String DATASOURCE_BEAN = "dataSource";
 	public static final String SQLSESSION_BEAN = "sqlSession";
 	
@@ -26,6 +26,11 @@ public class Constants{
 	
 	//error messages
 	public static final String NO_RESULTS = "No results";
+	
+	//non-attribute columns
+	public static final String ID = "id";
+	public static final String SONG_NAME = "song_name";
+	public static final String LINK = "link";
 	
 	
 	

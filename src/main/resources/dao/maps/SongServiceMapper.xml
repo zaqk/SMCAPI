@@ -1,205 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="maps.SongServiceMapper" >
- 
-    <resultMap type="com.smcapi.rest.model.song.Song" id="Song">
-	    <id property='id' column='id' />
-	    <result property='songName' column = 'song_name' />
-	    <result property='link' column = 'link'/>
-	    <result property='experimental' column = 'experimental' />
-	    <result property='houseInfluenced' column = 'house_influenced' />
-	    <result property='hipHopInfluenced' column = 'hip_hop_influenced' />
-	    <result property='indieInfluenced' column = 'indie_influenced' />
-	    <result property='deepHouse' column = 'deep_house' />
-	    <result property='hipHop' column = 'hip_hop' />
-	    <result property='indie' column = 'indie' />
-	    <result property='heavySubBass' column = 'heavy_sub_bass' />
-	    <result property='poppy' column = 'poppy' />
-	    <result property='energetic' column = 'energetic' />
-	    <result property='calm' column = 'calm' />
-	    <result property='ethereal' column = 'ethereal' />
-	    <result property='jazzInfluenced' column = 'jazz_influenced' />
-	    <result property='trapInfluenced' column = 'trap_influenced' />
-	    <result property='oldSchoolVibes' column = 'old_school_vibes' />
-	    <result property='maleVocals' column = 'male_vocals' />
-	    <result property='femaleVocals' column = 'female_vocals' />
-	    <result property='heavyVocalManipulation' column = 'heavy_vocal_manipulation' />
-	    <result property='instrumental' column = 'instrumental' />
-	    <result property='ambient' column = 'ambient' />
-	    <result property='aggressive' column = 'aggressive' />  
-   </resultMap>
-   
-	<select id="search" parameterType="com.smcapi.rest.model.song.SongRequest" resultMap="Song" >
-		select * from main
+<mapper namespace="maps.SongServiceMapper">
+
+	<resultMap type="com.smcapi.rest.model.song.Song" id="Song">
+		<id property='id' column='id' />
+		<result property="songName" column = "song_name" />
+		<result property="link" column = "link"/>
+		<collection property="attributes" javaType="HashMap" autoMapping="true"/>
+	</resultMap>
+	
+	
+	<select id="search" parameterType="com.smcapi.rest.model.song.SongRequest" resultMap="Song">
+		SELECT * FROM main
 		<where>
-			<!-- experimental -->
-			<if test="experimental">
-			experimental = 1::bit
-			</if>
-			<if test='!experimental'>
-			experimental = experimental
-			</if>
-			
-			<!-- house influenced -->
-			<if test="houseInfluenced">
-			AND house_influenced = 1::bit
-			</if>
-			<if test='!houseInfluenced'>
-			AND house_influenced = house_influenced
-			</if>
-			
-			<!-- hip hop influenced -->			
-			<if test='hipHopInfluenced'>
-			AND hip_hop_influenced = 1::bit
-			</if>
-			<if test='!hipHopInfluenced'>
-			AND hip_hop_influenced = hip_hop_influenced
-			</if>			
-
-			<!-- indie influenced -->			
-			<if test='indieInfluenced'>
-			AND indie_influenced = 1::bit
-			</if>
-			<if test='!indieInfluenced'>
-			AND indie_influenced = indie_influenced
-			</if>	
-
-			<!-- deep house -->			
-			<if test='deepHouse'>
-			AND deep_house = 1::bit
-			</if>
-			<if test='!deepHouse'>
-			AND deep_house = deep_house
-			</if>
-			
-			<!-- hip hop -->			
-			<if test='hipHop'>
-			AND hip_hop = 1::bit
-			</if>
-			<if test='!hipHop'>
-			AND hip_hop = hip_hop
-			</if>
-			
-			<!-- indie -->			
-			<if test='indie'>
-			AND indie = 1::bit
-			</if>
-			<if test='!indie'>
-			AND indie = indie
-			</if>
-			
-			<!-- heavy sub bass -->			
-			<if test='heavySubBass'>
-			AND heavy_sub_bass = 1::bit
-			</if>
-			<if test='!heavySubBass'>
-			AND heavy_sub_bass = heavy_sub_bass
-			</if>	
-			
-			<!-- poppy -->			
-			<if test='poppy'>
-			AND poppy = 1::bit
-			</if>
-			<if test='!poppy'>
-			AND poppy = poppy
-			</if>	
-			
-			<!-- energetic -->			
-			<if test='energetic'>
-			AND energetic = 1::bit
-			</if>
-			<if test='!energetic'>
-			AND energetic = energetic
-			</if>
-			
-			<!-- calm -->			
-			<if test='calm'>
-			AND calm = 1::bit
-			</if>
-			<if test='!calm'>
-			AND calm = calm
-			</if>				
-
-			<!-- ethereal -->			
-			<if test='ethereal'>
-			AND ethereal = 1::bit
-			</if>
-			<if test='!ethereal'>
-			AND ethereal = ethereal
-			</if>	
-			
-			<!-- jazz influenced -->			
-			<if test='jazzInfluenced'>
-			AND jazz_influenced = 1::bit
-			</if>
-			<if test='!jazzInfluenced'>
-			AND jazz_influenced = jazz_influenced
-			</if>
-			
-			<!-- trap influenced -->			
-			<if test='trapInfluenced'>
-			AND trap_influenced = 1::bit
-			</if>
-			<if test='!trapInfluenced'>
-			AND trap_influenced = trap_influenced
-			</if>		
-			
-			<!-- old school vibes -->			
-			<if test='oldSchoolVibes'>
-			AND old_school_vibes = 1::bit
-			</if>
-			<if test='!oldSchoolVibes'>
-			AND old_school_vibes = old_school_vibes
-			</if>
-			
-			<!-- male vocals -->			
-			<if test='maleVocals'>
-			AND male_vocals = 1::bit
-			</if>
-			<if test='!maleVocals'>
-			AND male_vocals = male_vocals
-			</if>	
-			
-			<!-- female vocals -->			
-			<if test='femaleVocals'>
-			AND female_vocals = 1::bit
-			</if>
-			<if test='!femaleVocals'>
-			AND female_vocals = female_vocals
-			</if>
-			
-			<!-- heavy vocal manipulation -->			
-			<if test='heavyVocalManipulation'>
-			AND heavy_vocal_manipulation = 1::bit
-			</if>
-			<if test='!femaleVocals'>
-			AND heavy_vocal_manipulation = heavy_vocal_manipulation
-			</if>	
-			
-			<!-- instrumental -->			
-			<if test='instrumental'>
-			AND instrumental = 1::bit
-			</if>
-			<if test='!instrumental'>
-			AND instrumental = instrumental
-			</if>	
-
-			<!-- ambient -->			
-			<if test='ambient'>
-			AND ambient = 1::bit
-			</if>
-			<if test='!ambient'>
-			AND ambient = ambient
-			</if>				
-
-			<!-- aggressive -->			
-			<if test='aggressive'>
-			AND aggressive = 1::bit
-			</if>
-			<if test='!aggressive'>
-			AND aggressive = aggressive
-			</if>			
+			<foreach collection="attributes.entrySet()" index="key" item="entry" separator="AND">
+			${key} = #{entry ,typeHandler=com.smcapi.util.AttributeTypeHandler}::bit
+			</foreach>
 		</where>
 	</select>
-    
+
 </mapper>
