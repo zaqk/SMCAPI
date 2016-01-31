@@ -22,6 +22,7 @@ public class Constants{
 	
 	//dao map methods
 	public static final String DAO_MAP_SEARCH = "maps.SongServiceMapper.search";
+	public static final String DAO_MAP_GET_ATTRIBUTES = "maps.AttributeServiceMapper.getAttributes";
 	
 	//error messages
 	public static final String NO_RESULTS = "No results";

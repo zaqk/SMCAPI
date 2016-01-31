@@ -17,18 +17,31 @@
             <cxf:logging/>
         </cxf:features>
     </cxf:bus>
-
+    
+    <!-- DAOs -->
 	<bean id="songDao"
 		class="com.smcapi.rest.dao.impl.SongManagerMemoryDao">
 	</bean>
-
+	<bean id="attributeDao"
+		class="com.smcapi.rest.dao.impl.AttributeManagerMemoryDao">
+	</bean>	
+    
+    <!-- services -->
 	<bean id="songManagerService"
 		class="com.smcapi.rest.services.impl.SongManagerService">
 		<property name="songDao" ref="songDao" />
 	</bean>
+	<bean id="attributeManagerService"
+		class="com.smcapi.rest.services.impl.AttributeManagerService">
+		<property name="attributeDao" ref="attributeDao" />
+	</bean>	
 	
+	<!-- mappers -->
 	<bean id="songServiceMapper" class="com.smcapi.rest.dao.mapper.SongServiceMapper">
 	</bean>
+	
+	<bean id="attributeServiceMapper" class="com.smcapi.rest.dao.mapper.AttributeServiceMapper">
+	</bean>	
 
 	<bean id="jsonProvider" 
 		class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider"/>
@@ -36,6 +49,7 @@
   	<jaxrs:server id="managerREST" address="/api">
   		<jaxrs:serviceBeans>
   			<ref bean="songManagerService"/>
+  			<ref bean="attributeManagerService"/>
   		</jaxrs:serviceBeans>
   		<jaxrs:providers>
 			<ref bean='jsonProvider' />

@@ -9,8 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.smcapi.rest.model.Song;
-import com.smcapi.rest.model.SongRequest;
+import com.smcapi.rest.model.song.Song;
+import com.smcapi.rest.model.song.SongRequest;
 import com.smcapi.util.Constants;
 import com.smcapi.util.VideoIdExtractor;
 

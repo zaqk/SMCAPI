@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="maps.AttributeServiceMapper">
+
+	<select id="getAttributes" resultType="string">
+		SELECT column_name
+		FROM information_schema.columns
+		WHERE table_schema = 'public'
+		AND table_name = 'main'
+		AND column_name NOT IN ('id', 'song_name', 'link')
+	</select>
+</mapper>

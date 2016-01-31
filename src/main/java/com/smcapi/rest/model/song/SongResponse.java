@@ -1,4 +1,4 @@
-package com.smcapi.rest.model;
+package com.smcapi.rest.model.song;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.smcapi.rest.services.impl;
 
 import com.smcapi.rest.dao.SongManagerDao;
-import com.smcapi.rest.model.SongRequest;
-import com.smcapi.rest.model.SongResponse;
+import com.smcapi.rest.model.song.SongRequest;
+import com.smcapi.rest.model.song.SongResponse;
 import com.smcapi.rest.services.SongManager;
 import com.smcapi.util.Constants;
 

@@ -1,7 +1,11 @@
-package com.smcapi.rest.model;
+package com.smcapi.rest.model.song;
 
-public class SongRequest {
 
+public class Song{
+	private int id;
+	private String songName;
+	private String link;
+	private String videoId;
 	private boolean experimental;
 	private boolean houseInfluenced;
 	private boolean hipHopInfluenced;
@@ -24,6 +28,30 @@ public class SongRequest {
 	private boolean ambient;
 	private boolean aggressive;
 	
+	public String getVideoId() {
+		return videoId;
+	}
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getSongName() {
+		return songName;
+	}
+	public void setSongName(String songName) {
+		this.songName = songName;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
+	}
 	public boolean isExperimental() {
 		return experimental;
 	}
@@ -150,4 +178,6 @@ public class SongRequest {
 	public void setAggressive(boolean aggressive) {
 		this.aggressive = aggressive;
 	}
+	
+	
 }
