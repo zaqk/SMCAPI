@@ -10,6 +10,7 @@
 		<cxf.bundle.version>3.0.0-milestone2</cxf.bundle.version>
 		<jetty.version>8.1.14.v20131031</jetty.version>
 		<postgresql.version>9.4.1207.jre7</postgresql.version>
+		<scala.version>2.11.7</scala.version>		
 		<slf4j.version>1.7.13</slf4j.version>
 		<spring.version>4.2.0.RELEASE</spring.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -110,6 +111,28 @@
 			<artifactId>neethi</artifactId>
 			<version>3.0.3</version>
 		</dependency>
+		<!-- Scala -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-reflect</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
+		<!-- ScalaTest -->
+		<dependency>
+			<groupId>org.scalatest</groupId>
+			<artifactId>scalatest_2.11</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>net.alchim31.maven</groupId>
+			<artifactId>scala-maven-plugin</artifactId>
+			<version>3.2.2</version>
+		</dependency>
 		<!-- SLF4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -170,6 +193,8 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/main/scala</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -196,6 +221,14 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<recompileMode>incremental</recompileMode>
 				</configuration>
 			</plugin>
 		</plugins>

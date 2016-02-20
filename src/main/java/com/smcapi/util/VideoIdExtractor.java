@@ -10,9 +10,7 @@ public class VideoIdExtractor {
 		 * 
 		 */
 		public String getVideoId(String link){
-			
-			
-			
+
 			for(int i = 0, n = link.length() ; i < n ; i++) { 
 			    char c = link.charAt(i);
 			    if(c == 'v'){

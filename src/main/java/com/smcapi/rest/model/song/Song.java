@@ -1,7 +1,6 @@
 package com.smcapi.rest.model.song;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Song{
 	
