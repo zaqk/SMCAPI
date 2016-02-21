@@ -3,7 +3,7 @@ package com.smcapi.util
 import org.scalatest._
 import helpers.YoutubeTestHelper
 
-class VideoIdExtractorScalaTest extends FunSuite with BeforeAndAfter with ShouldMatchers {  
+class VideoIdExtractorTest extends FunSuite with BeforeAndAfter with ShouldMatchers {  
   
   var extractor : VideoIdExtractor = _
   
