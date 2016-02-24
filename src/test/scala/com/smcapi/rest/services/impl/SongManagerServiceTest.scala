@@ -14,26 +14,14 @@ import com.smcapi.rest.model.song.Song
 import com.smcapi.rest.model.song.SongRequest
 import com.smcapi.rest.model.song.SongResponse
 import com.smcapi.util.Constants
+
+import helpers.SongModelHelper
 //this test is a work in progress... 
 class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMatchers with MockitoSugar{
   
-  //variables
-  //TODO clean up or place logic inside helper class
-  val attr1 = Map("attr1" -> java.lang.Boolean.TRUE, "attr2" -> java.lang.Boolean.TRUE, "attr3" -> java.lang.Boolean.TRUE).asJava
-  val attr2 = Map("attr1" -> java.lang.Boolean.TRUE, "attr2" -> java.lang.Boolean.FALSE, "attr3" -> java.lang.Boolean.TRUE).asJava
-  val attr3 = Map("attr1" -> java.lang.Boolean.FALSE, "attr2" -> java.lang.Boolean.FALSE, "attr3" -> java.lang.Boolean.FALSE).asJava
+  val songList = SongModelHelper.getSongList
   
-  val attr1HashMap = new java.util.HashMap[String,java.lang.Boolean](attr1)
-  val attr2HashMap = new java.util.HashMap[String,java.lang.Boolean](attr1)
-  val attr3HashMap = new java.util.HashMap[String,java.lang.Boolean](attr1)
-  
-  val song1 : Song = new Song("id1", "songname1", "link1", "videoId1", attr1HashMap)
-  val song2 : Song = new Song("id2", "songname2", "link2", "videoId2", attr2HashMap)
-  val song3 : Song = new Song("id2", "songname2", "link2", "videoId2", attr3HashMap)
-  
-  val songRequest : SongRequest = new SongRequest(attr1HashMap)
-  
-  val songList = List(song1, song2, song3).asJava
+  val songRequest = SongModelHelper.getSongRequest
   
   val emptySongList : List[Song] = Nil
   
@@ -67,6 +55,8 @@ class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMat
   }
   
   test("search() :: validate exception handling"){
+    
+    //TODO throw exception
     /*
      var songResponse = new SongResponse
     
