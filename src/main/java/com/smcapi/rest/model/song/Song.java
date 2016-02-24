@@ -10,6 +10,17 @@ public class Song{
 	private String videoId;
 	private HashMap<String, Boolean> attributes;
 	
+	public Song(String id, String songName, String link, String videoId,
+			    HashMap<String, Boolean> attributes){
+		this.id = id;
+		this.songName = songName;
+		this.link = link;
+		this.videoId = videoId;
+		this.attributes = attributes;
+	}
+	public Song(){
+	}
+	
 	public String getId() {
 		return id;
 	}
