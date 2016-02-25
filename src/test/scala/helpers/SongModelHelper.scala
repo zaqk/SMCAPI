@@ -22,14 +22,6 @@ object SongModelHelper {
   private val song1 : Song = new Song("id1", "songname1", "link1", "videoId1", attr1HashMap)
   private val song2 : Song = new Song("id2", "songname2", "link2", "videoId2", attr2HashMap)
   private val song3 : Song = new Song("id2", "songname2", "link2", "videoId2", attr3HashMap)
-  /*
-  def getSongList() : java.util.List[Song] = {
-    return List(song1, song2, song3).asJava
-  }
-  
-  def getSongRequest() : SongRequest = {
-    return new SongRequest(attr1HashMap)
-  }*/
   
   def songList = List(song1, song2, song3).asJava
   
