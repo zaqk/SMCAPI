@@ -19,9 +19,9 @@ import helpers.SongModelHelper
 //this test is a work in progress... 
 class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMatchers with MockitoSugar{
   
-  val songList = SongModelHelper.getSongList
+  val songList = SongModelHelper.songList
   
-  val songRequest = SongModelHelper.getSongRequest
+  val songRequest = SongModelHelper.songRequest
   
   val emptySongList : List[Song] = Nil
   
