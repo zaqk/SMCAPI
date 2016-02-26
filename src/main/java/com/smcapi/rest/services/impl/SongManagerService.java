@@ -10,12 +10,12 @@ public class SongManagerService implements SongManager{
 	
 	private SongManagerDao songDao;
 	
-	public SongManagerDao getSongDao(){
+	public SongManagerDao getDao(){
 		
 		return songDao;
 	}
 	
-	public void setSongDao(SongManagerDao songDao)
+	public void setDao(SongManagerDao songDao)
 	{
 		this.songDao = songDao;
 	}
@@ -25,7 +25,7 @@ public class SongManagerService implements SongManager{
 		SongResponse response = new SongResponse();
 		
 		try {
-			response.setSongs(getSongDao().search(songRequest));
+			response.setSongs(getDao().search(songRequest));
 			if(response.getSongs().isEmpty()) {
 				response.setErrorMessage(Constants.NO_RESULTS);
 			}

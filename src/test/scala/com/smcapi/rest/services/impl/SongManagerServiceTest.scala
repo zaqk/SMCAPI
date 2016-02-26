@@ -16,7 +16,7 @@ import com.smcapi.rest.model.song.SongResponse
 import com.smcapi.util.Constants
 
 import helpers.SongModelHelper
-//this test is a work in progress... 
+
 class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMatchers with MockitoSugar{
   
   val songList = SongModelHelper.songList
@@ -29,7 +29,7 @@ class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMat
   val dao = mock[SongManagerDao]
   
   before{
-    service.setSongDao(dao)
+    service.setDao(dao)
   }
   
 
@@ -43,7 +43,7 @@ class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMat
     
   }
   
-  test("search() :: validate that correct error is displayed for empty list"){
+  test("search() :: validate that correct error is returned for empty list"){
 
     when(dao.search(songRequest)).thenReturn(emptySongList.asJava)
     
@@ -56,21 +56,9 @@ class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMat
   
   test("search() :: validate exception handling"){
     
-    //TODO throw exception
-    /*
-     var songResponse = new SongResponse
+    //TODO validate search() exception handling
     
-     when(dao.search(songRequest)).thenThrow(new RuntimeException)
-     
-     intercept[RuntimeException]{
-      songResponse = service.search(songRequest)
-     }
-     
-     println(songResponse.getErrorMessage)
-     
-     //songResponse.getSongs should be ('empty)
-     //songResponse.getErrorMessage should not be empty
-*/
+
     
   }
   
