@@ -2,7 +2,9 @@ package com.smcapi.rest.model.attribute;
 
 import java.util.List;
 
-public class AttributeResponse {
+import com.smcapi.rest.model.Response;
+
+public class AttributeResponse extends Response{
 
 	private List<String> attributes;
 	private String errorMessage;

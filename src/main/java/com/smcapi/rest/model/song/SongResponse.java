@@ -2,7 +2,9 @@ package com.smcapi.rest.model.song;
 
 import java.util.List;
 
-public class SongResponse
+import com.smcapi.rest.model.Response;
+
+public class SongResponse extends Response
 {
 	
 	private List<Song> songs;
