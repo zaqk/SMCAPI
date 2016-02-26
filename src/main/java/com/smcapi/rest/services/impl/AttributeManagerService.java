@@ -10,12 +10,12 @@ public class AttributeManagerService implements AttributeManager{
 	
 	private AttributeManagerDao attributeDao;
 	
-	public AttributeManagerDao getAttributeDao(){
+	public AttributeManagerDao getDao(){
 		
 		return attributeDao;
 	}
 	
-	public void setAttributeDao(AttributeManagerDao attributeDao)
+	public void setDao(AttributeManagerDao attributeDao)
 	{
 		this.attributeDao = attributeDao;
 	}
@@ -24,7 +24,7 @@ public class AttributeManagerService implements AttributeManager{
 	public AttributeResponse getAttributes() {
 		AttributeResponse response = new AttributeResponse();
 		try {
-			response.setAttributes(getAttributeDao().getAttributes());
+			response.setAttributes(getDao().getAttributes());
 			if(response.getAttributes().isEmpty()) {
 				response.setErrorMessage(Constants.NO_RESULTS);
 			}
