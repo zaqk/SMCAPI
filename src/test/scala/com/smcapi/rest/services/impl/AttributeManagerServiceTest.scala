@@ -31,7 +31,7 @@ class AttributeManagerServiceTest extends FunSuite with BeforeAndAfter with Shou
     
     val attributeResponse = service.getAttributes
     
-    attributeResponse should equal (attributeList)
+    attributeResponse.getAttributes should equal (attributeList)
     
   }
   
@@ -41,7 +41,7 @@ class AttributeManagerServiceTest extends FunSuite with BeforeAndAfter with Shou
     
     val attributeResponse = service.getAttributes
     
-    attributeResponse should be ('empty)
+    attributeResponse.getAttributes should be ('empty)
     attributeResponse.getErrorMessage should be (Constants.NO_RESULTS)
     
   }

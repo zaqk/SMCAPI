@@ -96,6 +96,7 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>2.0.42-beta</version>
+			<scope>test</scope>
 		</dependency>		
 		<!-- myBatis -->
 		<dependency>
@@ -119,27 +120,32 @@
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
 			<version>${scala.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-reflect</artifactId>
 			<version>${scala.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- ScalaTest -->
 		<dependency>
 			<groupId>org.scalatest</groupId>
 			<artifactId>scalatest_2.11</artifactId>
 			<version>2.1.7</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.alchim31.maven</groupId>
 			<artifactId>scala-maven-plugin</artifactId>
 			<version>3.2.2</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.scalamock</groupId>
 			<artifactId>scalamock-scalatest-support_2.11</artifactId>
 			<version>3.2.2</version>
+			<scope>test</scope>
 		</dependency>
 		<!-- SLF4J -->
 		<dependency>
