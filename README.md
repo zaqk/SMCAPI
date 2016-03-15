@@ -7,7 +7,7 @@ Make sure you set the DATABASE_URL env variable to the connection url of your lo
 
 Work in progress...
 
-#### Local
+#### Running the application locally
 * $ set DATABASE_URL environment variable to your local postgres database connection url
 * $ mvn clean install
 * $ java -cp "target/classes;target/dependency/*" com.smcapi.main.Main
