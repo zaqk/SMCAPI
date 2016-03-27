@@ -22,7 +22,7 @@ class AttributeManagerServiceTest extends FunSuite with BeforeAndAfter with Shou
   val emptyList : List[String] = Nil
   
   before{
-    service.setDao(dao)
+    service.setAttributeDao(dao)
   }
   
   test("getAttributes() :: validate attribute list is returned"){

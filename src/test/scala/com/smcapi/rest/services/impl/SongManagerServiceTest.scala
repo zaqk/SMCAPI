@@ -29,7 +29,7 @@ class SongManagerServiceTest extends FunSuite with BeforeAndAfter with ShouldMat
   val dao = mock[SongManagerDao]
   
   before{
-    service.setDao(dao)
+    service.setSongDao(dao)
   }
   
 
